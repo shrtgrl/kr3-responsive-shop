@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+main,
+.site-header__inner,
+.site-footer__inner {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+@media (min-width: 768px) {
+    main,
+    .site-header__inner,
+    .site-footer__inner {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
