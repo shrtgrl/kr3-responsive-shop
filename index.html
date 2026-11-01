@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +10,21 @@
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
 </head>
+
 <body>
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">ShopProject</a>
 
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-list"
+        aria-label="Открыть меню">
+        <span class="nav-toggle__line" aria-hidden="true"></span>
+        <span class="nav-toggle__line" aria-hidden="true"></span>
+        <span class="nav-toggle__line" aria-hidden="true"></span>
+      </button>
+
       <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
+        <ul class="site-nav__list" id="site-nav-list">
           <li class="site-nav__item">
             <a class="site-nav__link site-nav__link--active" href="index.html">Главная</a>
           </li>
@@ -49,7 +58,8 @@
           <a class="button button--secondary" href="#popular">Популярные товары</a>
         </div>
       </div>
-      <img class="hero__image" src="images/product-placeholder.svg" alt="Витрина учебного интернет-магазина" width="400" height="300">
+      <img class="hero__image" src="images/product-placeholder.svg" alt="Витрина учебного интернет-магазина" width="400"
+        height="300">
     </section>
 
     <section class="section" id="advantages">
@@ -77,7 +87,8 @@
       <div class="products-grid">
         <article class="product-card">
           <span class="product-card__badge">Новинка</span>
-          <img class="product-card__image" src="images/product-placeholder.svg" alt="Учебный товар 1" width="400" height="300">
+          <img class="product-card__image" src="images/product-placeholder.svg" alt="Учебный товар 1" width="400"
+            height="300">
           <h3 class="product-card__title">Товар 1</h3>
           <p class="product-card__description">Краткое описание учебного товара.</p>
           <p class="product-card__price">1 000 руб.</p>
@@ -91,7 +102,8 @@
 
         <article class="product-card">
           <span class="product-card__badge">Хит</span>
-          <img class="product-card__image" src="images/product-placeholder.svg" alt="Учебный товар 2" width="400" height="300">
+          <img class="product-card__image" src="images/product-placeholder.svg" alt="Учебный товар 2" width="400"
+            height="300">
           <h3 class="product-card__title">Товар 2</h3>
           <p class="product-card__description">Краткое описание учебного товара.</p>
           <p class="product-card__price">1 500 руб.</p>
@@ -105,7 +117,8 @@
 
         <article class="product-card product-card--discount">
           <span class="product-card__badge">Скидка</span>
-          <img class="product-card__image" src="images/product-placeholder.svg" alt="Учебный товар 3" width="400" height="300">
+          <img class="product-card__image" src="images/product-placeholder.svg" alt="Учебный товар 3" width="400"
+            height="300">
           <h3 class="product-card__title">Товар 3</h3>
           <p class="product-card__description">Краткое описание учебного товара.</p>
           <p class="product-card__price">2 000 руб.</p>
@@ -164,4 +177,5 @@
     </form>
   </dialog>
 </body>
+
 </html>

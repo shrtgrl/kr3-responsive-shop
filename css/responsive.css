@@ -1,3 +1,4 @@
+/* Mobile First, min-width */
 *,
 *::before,
 *::after {
@@ -17,11 +18,107 @@ main,
     padding-right: 16px;
 }
 
+/* Навигация: мобильная версия */
+.site-header__inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.site-nav {
+    flex-basis: 100%;
+}
+
+.site-nav__list {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+}
+
+.site-nav__list.is-open {
+    display: flex;
+}
+
+.nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.nav-toggle__line {
+    display: block;
+    height: 2px;
+    background-color: var(--color-text);
+    border-radius: 2px;
+    transition: transform 0.2s;
+}
+
+.nav-toggle:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__line:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 @media (min-width: 768px) {
     main,
     .site-header__inner,
     .site-footer__inner {
         padding-left: 24px;
         padding-right: 24px;
+    }
+
+    .site-header__inner {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .site-nav__list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .site-nav__link {
+        display: inline-block;
+        padding: 8px 16px;
+    }
+
+    .site-header {
+        position: sticky;
+        top: 0;
+    }
+
+        .nav-toggle {
+        display: none;
+    }
+
+    .site-nav {
+        flex-basis: auto;
+    }
+
+    .site-nav__list {
+        display: flex;
     }
 }
