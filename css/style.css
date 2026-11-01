@@ -165,7 +165,6 @@ main {
 
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: var(--space-xl);
   margin-bottom: var(--space-xl);
@@ -207,7 +206,6 @@ main {
 
 .advantages {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
   margin: 0;
   padding: 0;
@@ -281,13 +279,6 @@ main {
 
 .product-card--discount .product-card__badge {
   background-color: var(--color-danger);
-}
-
-.product-card__image {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-sm);
 }
 
 .product-card__title {
@@ -372,8 +363,6 @@ main {
 }
 
 .catalog-filters {
-  position: sticky;
-  top: 100px;
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);

@@ -10,6 +10,18 @@ if (navToggle && navList) {
   });
 }
 
+// Сворачиваемый фильтр каталога на мобильных экранах.
+const filtersToggle = document.querySelector('.catalog-filters__toggle');
+const filtersForm = document.querySelector('#filters-form');
+
+if (filtersToggle && filtersForm) {
+  filtersToggle.addEventListener('click', () => {
+    const isOpen = filtersForm.classList.toggle('is-open');
+    filtersToggle.setAttribute('aria-expanded', isOpen);
+    filtersToggle.textContent = isOpen ? 'Скрыть фильтры' : 'Показать фильтры';
+  });
+}
+
 // Минимальная логика модального окна: открыть по кнопке «Заказать» и закрыть.
 const orderDialog = document.querySelector('#order-dialog');
 

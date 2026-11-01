@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
 </head>
+
 <body>
   <header class="site-header">
     <div class="site-header__inner">
@@ -56,9 +58,15 @@
 
     <div class="catalog-layout">
       <aside class="catalog-filters">
-        <h2 class="catalog-filters__title">Фильтры</h2>
+        <div class="catalog-filters__header">
+          <h2 class="catalog-filters__title">Фильтры</h2>
+          <button class="button button--secondary catalog-filters__toggle" type="button" aria-expanded="false"
+            aria-controls="filters-form">
+            Показать фильтры
+          </button>
+        </div>
 
-        <form class="filters-form" action="#" method="get">
+        <form class="filters-form" id="filters-form" action="#" method="get">
           <fieldset class="filters-form__group">
             <legend class="filters-form__legend">Категория</legend>
             <label class="filters-form__option">
@@ -91,7 +99,8 @@
         <div class="products-grid">
           <article class="product-card">
             <span class="product-card__badge">Новинка</span>
-            <img class="product-card__image" src="images/product-placeholder.svg" alt="Учебный товар 1" width="400" height="300">
+            <img class="product-card__image" src="images/product-placeholder.svg" alt="Учебный товар 1" width="400"
+              height="300">
             <h3 class="product-card__title">Товар 1</h3>
             <p class="product-card__description">Краткое описание учебного товара.</p>
             <p class="product-card__price">1 000 руб.</p>
@@ -105,7 +114,8 @@
 
           <article class="product-card">
             <span class="product-card__badge">Хит</span>
-            <img class="product-card__image" src="images/product-placeholder.svg" alt="Учебный товар 2" width="400" height="300">
+            <img class="product-card__image" src="images/product-placeholder.svg" alt="Учебный товар 2" width="400"
+              height="300">
             <h3 class="product-card__title">Товар 2</h3>
             <p class="product-card__description">Краткое описание учебного товара.</p>
             <p class="product-card__price">1 500 руб.</p>
@@ -119,7 +129,8 @@
 
           <article class="product-card product-card--discount">
             <span class="product-card__badge">Скидка</span>
-            <img class="product-card__image" src="images/product-placeholder.svg" alt="Учебный товар 3" width="400" height="300">
+            <img class="product-card__image" src="images/product-placeholder.svg" alt="Учебный товар 3" width="400"
+              height="300">
             <h3 class="product-card__title">Товар 3</h3>
             <p class="product-card__description">Краткое описание учебного товара.</p>
             <p class="product-card__price">2 000 руб.</p>
@@ -132,7 +143,8 @@
           </article>
 
           <article class="product-card">
-            <img class="product-card__image" src="images/product-placeholder.svg" alt="Учебный товар 4" width="400" height="300">
+            <img class="product-card__image" src="images/product-placeholder.svg" alt="Учебный товар 4" width="400"
+              height="300">
             <h3 class="product-card__title">Товар 4</h3>
             <p class="product-card__description">Краткое описание учебного товара.</p>
             <p class="product-card__price">2 500 руб.</p>
@@ -146,7 +158,8 @@
 
           <article class="product-card">
             <span class="product-card__badge">Новинка</span>
-            <img class="product-card__image" src="images/product-placeholder.svg" alt="Учебный товар 5" width="400" height="300">
+            <img class="product-card__image" src="images/product-placeholder.svg" alt="Учебный товар 5" width="400"
+              height="300">
             <h3 class="product-card__title">Товар 5</h3>
             <p class="product-card__description">Краткое описание учебного товара.</p>
             <p class="product-card__price">3 000 руб.</p>
@@ -159,7 +172,8 @@
           </article>
 
           <article class="product-card">
-            <img class="product-card__image" src="images/product-placeholder.svg" alt="Учебный товар 6" width="400" height="300">
+            <img class="product-card__image" src="images/product-placeholder.svg" alt="Учебный товар 6" width="400"
+              height="300">
             <h3 class="product-card__title">Товар 6</h3>
             <p class="product-card__description">Краткое описание учебного товара.</p>
             <p class="product-card__price">3 500 руб.</p>
@@ -211,4 +225,5 @@
     </form>
   </dialog>
 </body>
+
 </html>
