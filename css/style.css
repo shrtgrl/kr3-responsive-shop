@@ -128,7 +128,7 @@ main {
 
 .site-nav__link:focus-visible {
   outline: 2px solid var(--color-primary);
-  outline-offset: 3px;
+  outline-offset: -2px;
 }
 
 .site-nav__link--active {
@@ -628,4 +628,24 @@ main {
   right: var(--space-lg);
   bottom: var(--space-lg);
   z-index: 90;
+}
+
+/* ===============================
+   14. Доступность
+   =============================== */
+
+/*
+  Общий видимый фокус для всех интерактивных элементов.
+  :focus-visible показывает рамку при навигации с клавиатуры
+  и не показывает её при клике мышкой по кнопкам и ссылкам.
+  Отдельные правила выше (меню, кнопки, поля) специфичнее и работают как раньше.
+*/
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* На синем фоне активного пункта меню синяя рамка не видна — делаем её белой. */
+.site-nav__link--active:focus-visible {
+  outline-color: var(--color-white);
 }
