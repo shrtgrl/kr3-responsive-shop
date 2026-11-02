@@ -308,6 +308,18 @@ main,
     }
 }
 
+/* ===== Подвал: мобильная версия ===== */
+.site-footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.site-footer__links {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+}
+
 @media (min-width: 640px) {
     .products-grid,
     .advantages {
@@ -316,6 +328,11 @@ main,
 }
 
 @media (min-width: 768px) {
+    .site-footer__inner {
+        flex-direction: row;
+        align-items: center;
+    }
+
     main,
     .site-header__inner,
     .site-footer__inner {
