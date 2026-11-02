@@ -12,7 +12,9 @@
 </head>
 
 <body>
-  <header class="site-header">
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header class="site-header" id="top">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">ShopProject</a>
 
@@ -32,7 +34,7 @@
             <a class="site-nav__link" href="catalog.html">Каталог</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link site-nav__link--active" href="product.html">Товар</a>
+            <a class="site-nav__link site-nav__link--active" href="product.html" aria-current="page">Товар</a>
           </li>
           <li class="site-nav__item">
             <a class="site-nav__link" href="order.html">Заявка</a>
@@ -45,11 +47,11 @@
     </div>
   </header>
 
-  <main id="top">
+  <main id="main">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
       <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
-      <span class="breadcrumbs__current">Товар 1</span>
+      <span class="breadcrumbs__current" aria-current="page">Товар 1</span>
     </nav>
 
     <article class="product">

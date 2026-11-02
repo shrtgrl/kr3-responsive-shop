@@ -241,6 +241,27 @@ main,
     align-items: center;
 }
 
+/* ===============================
+   14. Доступность
+   =============================== */
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 1000;
+  padding: 8px 12px;
+  color: var(--color-white);
+  background-color: var(--color-text);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 16px;
+}
+
 /* ===== Таблица: карточки на мобильном ===== */
 @media (max-width: 639px) {
     .product-table {

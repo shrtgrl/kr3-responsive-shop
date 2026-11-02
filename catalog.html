@@ -12,7 +12,9 @@
 </head>
 
 <body>
-  <header class="site-header">
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header class="site-header" id="top">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">ShopProject</a>
 
@@ -29,7 +31,7 @@
             <a class="site-nav__link" href="index.html">Главная</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a>
+            <a class="site-nav__link site-nav__link--active" href="catalog.html" aria-current="page">Каталог</a>
           </li>
           <li class="site-nav__item">
             <a class="site-nav__link" href="product.html">Товар</a>
@@ -45,10 +47,10 @@
     </div>
   </header>
 
-  <main id="top">
+  <main id="main">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
-      <span class="breadcrumbs__current">Каталог</span>
+      <span class="breadcrumbs__current" aria-current="page">Каталог</span>
     </nav>
 
     <section class="section">
@@ -281,12 +283,12 @@
       <input type="hidden" id="dialog-product" name="product">
 
       <div class="order-form__field">
-        <label class="order-form__label" for="dialog-name">Имя</label>
+        <label class="order-form__label" for="dialog-name">Имя *</label>
         <input class="order-form__input" id="dialog-name" name="name" type="text" required>
       </div>
 
       <div class="order-form__field">
-        <label class="order-form__label" for="dialog-email">E-mail</label>
+        <label class="order-form__label" for="dialog-email">E-mail *</label>
         <input class="order-form__input" id="dialog-email" name="email" type="email" required>
       </div>
 
