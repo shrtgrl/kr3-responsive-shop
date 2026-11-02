@@ -50,7 +50,7 @@ main,
     width: 44px;
     height: 44px;
     padding: 10px;
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-on-dark);
     border-radius: var(--radius-sm);
     background-color: transparent;
     cursor: pointer;
@@ -59,13 +59,13 @@ main,
 .nav-toggle__line {
     display: block;
     height: 2px;
-    background-color: var(--color-text);
+    background-color: var(--color-on-dark);
     border-radius: 2px;
     transition: transform 0.2s;
 }
 
 .nav-toggle:focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--color-on-dark);
     outline-offset: 3px;
 }
 
@@ -98,6 +98,8 @@ main,
 
 .hero__image {
     max-width: 420px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
     margin-inline: auto;
 }
 
@@ -252,7 +254,7 @@ main,
   z-index: 1000;
   padding: 8px 12px;
   color: var(--color-white);
-  background-color: var(--color-text);
+  background-color: var(--color-primary);
   border-radius: var(--radius-sm);
   text-decoration: none;
 }
@@ -415,6 +417,19 @@ main,
 }
 
 @media (min-width: 1024px) {
+    /* Слайдер: на десктопе видно два слайда сразу */
+    .lookbook__slide {
+        flex-basis: calc(50% - 8px);
+    }
+
+    .lookbook__image {
+        aspect-ratio: 3 / 2;
+    }
+
+    .site-header__logo img {
+        height: 32px;
+    }
+
     .products-grid,
     .advantages {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -442,11 +457,5 @@ main,
 
     .filters-form {
         display: grid;
-    }
-}
-
-@media (min-width: 1280px) {
-    .catalog-products .products-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
