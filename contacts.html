@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Контакты — ShopProject</title>
   <meta name="description" content="Контактная информация учебного интернет-магазина и форма обратной связи.">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
 </head>
+
 <body>
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">ShopProject</a>
 
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-list"
+        aria-label="Открыть меню">
+        <span class="nav-toggle__line" aria-hidden="true"></span>
+        <span class="nav-toggle__line" aria-hidden="true"></span>
+        <span class="nav-toggle__line" aria-hidden="true"></span>
+      </button>
+
       <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
+        <ul class="site-nav__list" id="site-nav-list">
           <li class="site-nav__item">
             <a class="site-nav__link" href="index.html">Главная</a>
           </li>
@@ -49,7 +59,8 @@
         <ul class="contacts__list">
           <li class="contacts__item"><strong>Адрес:</strong> г. Москва, ул. Учебная, д. 1</li>
           <li class="contacts__item"><strong>Телефон:</strong> <a href="tel:+79000000000">+7 900 000-00-00</a></li>
-          <li class="contacts__item"><strong>E-mail:</strong> <a href="mailto:info@shopproject.ru">info@shopproject.ru</a></li>
+          <li class="contacts__item"><strong>E-mail:</strong> <a
+              href="mailto:info@shopproject.ru">info@shopproject.ru</a></li>
           <li class="contacts__item"><strong>Часы работы:</strong> ежедневно, 10:00–20:00</li>
         </ul>
       </section>
@@ -94,4 +105,5 @@
 
   <a class="button button--primary back-to-top" href="#top">Наверх</a>
 </body>
+
 </html>

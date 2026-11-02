@@ -165,7 +165,6 @@ main {
 
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: var(--space-xl);
   margin-bottom: var(--space-xl);
@@ -207,7 +206,6 @@ main {
 
 .advantages {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
   margin: 0;
   padding: 0;
@@ -244,7 +242,6 @@ main {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
 }
 
@@ -282,13 +279,6 @@ main {
 
 .product-card--discount .product-card__badge {
   background-color: var(--color-danger);
-}
-
-.product-card__image {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-sm);
 }
 
 .product-card__title {
@@ -368,14 +358,11 @@ main {
 
 .catalog-layout {
   display: grid;
-  grid-template-columns: 260px 1fr;
   gap: var(--space-lg);
   align-items: start;
 }
 
 .catalog-filters {
-  position: sticky;
-  top: 100px;
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -426,7 +413,6 @@ main {
 
 .product {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: var(--space-xl);
   margin-bottom: var(--space-xl);
 }
@@ -490,7 +476,6 @@ main {
 
 .order-form {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: var(--space-md);
   padding: var(--space-lg);
   border: 1px solid var(--color-border);
@@ -564,7 +549,6 @@ main {
 
 .contacts {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: var(--space-xl);
   align-items: start;
 }
@@ -591,7 +575,6 @@ main {
    =============================== */
 
 .order-dialog {
-  width: 560px;
   padding: var(--space-lg);
   border: none;
   border-radius: var(--radius-lg);

@@ -6,6 +6,7 @@
   <title>Заявка — ShopProject</title>
   <meta name="description" content="Форма оформления заявки на учебный товар.">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -13,8 +14,15 @@
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">ShopProject</a>
 
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-list"
+        aria-label="Открыть меню">
+        <span class="nav-toggle__line" aria-hidden="true"></span>
+        <span class="nav-toggle__line" aria-hidden="true"></span>
+        <span class="nav-toggle__line" aria-hidden="true"></span>
+      </button>
+
       <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
+        <ul class="site-nav__list" id="site-nav-list">
           <li class="site-nav__item">
             <a class="site-nav__link" href="index.html">Главная</a>
           </li>

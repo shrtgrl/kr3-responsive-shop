@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Товар 1 — ShopProject</title>
   <meta name="description" content="Карточка учебного товара: описание, цена и характеристики.">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
 </head>
+
 <body>
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">ShopProject</a>
 
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-list"
+        aria-label="Открыть меню">
+        <span class="nav-toggle__line" aria-hidden="true"></span>
+        <span class="nav-toggle__line" aria-hidden="true"></span>
+        <span class="nav-toggle__line" aria-hidden="true"></span>
+      </button>
+
       <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
+        <ul class="site-nav__list" id="site-nav-list">
           <li class="site-nav__item">
             <a class="site-nav__link" href="index.html">Главная</a>
           </li>
@@ -43,8 +53,11 @@
     </nav>
 
     <article class="product">
-      <img class="product__image" src="images/product-placeholder.svg" alt="Учебный товар 1" width="400" height="300">
-
+      <img class="product-card__image" src="images/real-2000/real-2000-640.jpg" srcset="images/real-2000/real-2000-480.jpg 480w,
+                    images/real-2000/real-2000-640.jpg 640w,
+                    images/real-2000/real-2000-960.jpg 960w" sizes="(max-width: 767px) 100vw, 50vw",
+                  (max-width: 1023px) 50vw,
+                  33vw" alt="Футболка Реал Мадрид 2000" width="640" height="640" loading="lazy">
       <div class="product__info">
         <h1 class="product__title">Товар 1</h1>
         <p class="product__description">
@@ -62,33 +75,36 @@
     <section class="section">
       <h2 class="section__title">Характеристики</h2>
 
-      <table class="product-table">
-        <caption class="product-table__caption">Характеристики товара</caption>
-        <thead>
-          <tr>
-            <th>Параметр</th>
-            <th>Значение</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Категория</th>
-            <td>Учебные товары</td>
-          </tr>
-          <tr>
-            <th>Цена</th>
-            <td>1 000 руб.</td>
-          </tr>
-          <tr>
-            <th>Наличие</th>
-            <td>В наличии</td>
-          </tr>
-          <tr>
-            <th>Гарантия</th>
-            <td>12 месяцев</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-wrapper" tabindex="0" role="region" aria-label="Характеристики товара">
+        <table class="product-table">
+          <caption class="product-table__caption">Характеристики товара</caption>
+          <thead>
+            <tr>
+              <th scope="col">Параметр</th>
+              <th scope="col">Значение</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Категория</th>
+              <td>Учебные товары</td>
+            </tr>
+            <tr>
+              <th scope="row">Цена</th>
+              <td>1 000 руб.</td>
+            </tr>
+            <tr>
+              <th scope="row">Наличие</th>
+              <td>В наличии</td>
+            </tr>
+            <tr>
+              <th scope="row">Гарантия</th>
+              <td>12 месяцев</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
     </section>
   </main>
 
@@ -105,4 +121,5 @@
 
   <a class="button button--primary back-to-top" href="#top">Наверх</a>
 </body>
+
 </html>
