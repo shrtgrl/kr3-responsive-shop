@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Каталог — ShopProject</title>
-  <meta name="description" content="Каталог учебных товаров с фильтрами.">
+  <title>Каталог — Kanan</title>
+  <meta name="description" content="Каталог футбольных ретро-форм Kanan: клубы и сборные 1990–2000-х.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
@@ -16,7 +16,9 @@
 
   <header class="site-header" id="top">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <a class="site-header__logo" href="index.html">
+        <img src="images/logo-light.svg" alt="Kanan — на главную" width="134" height="32">
+      </a>
 
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-list"
         aria-label="Открыть меню">
@@ -54,8 +56,7 @@
     </nav>
 
     <section class="section">
-      <h1>Каталог товаров</h1>
-      <p>Выберите товар из каталога или воспользуйтесь фильтрами.</p>
+      <h1>Каталог форм</h1>
     </section>
 
     <div class="catalog-layout">
@@ -85,9 +86,9 @@
           <fieldset class="filters-form__group">
             <legend class="filters-form__legend">Цена, руб.</legend>
             <label class="filters-form__label" for="price-from">От</label>
-            <input class="filters-form__input" id="price-from" name="price-from" type="number" min="0" placeholder="0">
+            <input class="filters-form__input" id="price-from" name="price-from" type="number" min="0" placeholder="6000">
             <label class="filters-form__label" for="price-to">До</label>
-            <input class="filters-form__input" id="price-to" name="price-to" type="number" min="0" placeholder="5000">
+            <input class="filters-form__input" id="price-to" name="price-to" type="number" min="0" placeholder="16000">
           </fieldset>
 
           <button class="button button--primary" type="submit">Применить</button>
@@ -101,23 +102,46 @@
         <div class="products-grid">
           <article class="product-card">
             <span class="product-card__badge">Новинка</span>
-            <img
-              class="product-card__image"
-              src="images/france-2006/france-2006-640.jpg"
-              srcset="images/france-2006/france-2006-480.jpg 480w,
-                      images/france-2006/france-2006-640.jpg 640w,
-                      images/france-2006/france-2006-960.jpg 960w"
-              sizes="(max-width: 639px) 100vw,
-                    (max-width: 1023px) 50vw,
-                    33vw"
-              alt="Футболка сборной Франции 2006 года"
-              width="640"
-              height="640"
-              loading="lazy"
-            >
+            <div class="card-slider">
+              <ul class="card-slider__track" tabindex="0" aria-label="Фото товара: листайте горизонтально">
+                <li class="card-slider__slide">
+                  <img
+                    class="product-card__image"
+                    src="images/france-2006/france-2006-640.jpg"
+                    srcset="images/france-2006/france-2006-480.jpg 480w,
+                            images/france-2006/france-2006-640.jpg 640w,
+                            images/france-2006/france-2006-960.jpg 960w"
+                    sizes="(max-width: 639px) 100vw,
+                           (max-width: 1023px) 50vw,
+                           33vw"
+                    alt="Футболка сборной Франции 2006 года, вид спереди"
+                    width="640"
+                    height="640"
+                    loading="lazy"
+                  >
+                </li>
+                <li class="card-slider__slide">
+                  <img
+                    class="product-card__image"
+                    src="images/france-2006/france-2006-back-640.jpg"
+                    srcset="images/france-2006/france-2006-back-480.jpg 480w,
+                            images/france-2006/france-2006-back-640.jpg 640w,
+                            images/france-2006/france-2006-back-960.jpg 960w"
+                    sizes="(max-width: 639px) 100vw,
+                           (max-width: 1023px) 50vw,
+                           33vw"
+                    alt="Футболка сборной Франции 2006 года, вид сзади"
+                    width="640"
+                    height="640"
+                    loading="lazy"
+                  >
+                </li>
+              </ul>
+              <div class="card-slider__dots"></div>
+            </div>
             <h3 class="product-card__title">Франция 2006</h3>
-            <p class="product-card__description">Ретро-футболка сборной Франции сезона 2006 года.</p>
-            <p class="product-card__price">1 000 руб.</p>
+            <p class="product-card__description">Выездная форма Adidas с чемпионата мира 2006 года — того самого, что закончился финалом в Берлине.</p>
+            <p class="product-card__price">9 900 руб.</p>
             <div class="product-card__actions">
               <a class="button button--secondary" href="product.html">Подробнее</a>
               <button class="button button--primary product-card__button" type="button" data-product="Франция 2006">
@@ -128,23 +152,46 @@
 
           <article class="product-card">
             <span class="product-card__badge">Хит</span>
-            <img
-              class="product-card__image"
-              src="images/manunt/manunt-2007-640.jpg"
-              srcset="images/manunt/manunt-2007-480.jpg 480w,
-                      images/manunt/manunt-2007-640.jpg 640w,
-                      images/manunt/manunt-2007-960.jpg 960w"
-              sizes="(max-width: 639px) 100vw,
-                    (max-width: 1023px) 50vw,
-                    33vw"
-              alt="Футболка Манчестер Юнайтед 2007"
-              width="640"
-              height="640"
-              loading="lazy"
-            >
+            <div class="card-slider">
+              <ul class="card-slider__track" tabindex="0" aria-label="Фото товара: листайте горизонтально">
+                <li class="card-slider__slide">
+                  <img
+                    class="product-card__image"
+                    src="images/manunt/manunt-2007-640.jpg"
+                    srcset="images/manunt/manunt-2007-480.jpg 480w,
+                            images/manunt/manunt-2007-640.jpg 640w,
+                            images/manunt/manunt-2007-960.jpg 960w"
+                    sizes="(max-width: 639px) 100vw,
+                           (max-width: 1023px) 50vw,
+                           33vw"
+                    alt="Футболка Манчестер Юнайтед 2007, вид спереди"
+                    width="640"
+                    height="640"
+                    loading="lazy"
+                  >
+                </li>
+                <li class="card-slider__slide">
+                  <img
+                    class="product-card__image"
+                    src="images/manunt/manunt-2007-back-640.jpg"
+                    srcset="images/manunt/manunt-2007-back-480.jpg 480w,
+                            images/manunt/manunt-2007-back-640.jpg 640w,
+                            images/manunt/manunt-2007-back-960.jpg 960w"
+                    sizes="(max-width: 639px) 100vw,
+                           (max-width: 1023px) 50vw,
+                           33vw"
+                    alt="Футболка Манчестер Юнайтед 2007, вид сзади"
+                    width="640"
+                    height="640"
+                    loading="lazy"
+                  >
+                </li>
+              </ul>
+              <div class="card-slider__dots"></div>
+            </div>
             <h3 class="product-card__title">Манчестер Юнайтед 2007</h3>
-            <p class="product-card__description">Ретро-футболка «Манчестер Юнайтед» сезона 2007 года.</p>
-            <p class="product-card__price">1 500 руб.</p>
+            <p class="product-card__description">Домашняя форма Nike со спонсором AIG — сезон, в котором «Юнайтед» выиграл Лигу чемпионов.</p>
+            <p class="product-card__price">12 500 руб.</p>
             <div class="product-card__actions">
               <a class="button button--secondary" href="product.html">Подробнее</a>
               <button class="button button--primary product-card__button" type="button" data-product="Манчестер Юнайтед 2007">
@@ -155,23 +202,46 @@
 
           <article class="product-card product-card--discount">
             <span class="product-card__badge">Скидка</span>
-            <img
-              class="product-card__image"
-              src="images/real-2000/real-2000-640.jpg"
-              srcset="images/real-2000/real-2000-480.jpg 480w,
-                      images/real-2000/real-2000-640.jpg 640w,
-                      images/real-2000/real-2000-960.jpg 960w"
-              sizes="(max-width: 639px) 100vw,
-                    (max-width: 1023px) 50vw,
-                    33vw"
-              alt="Футболка Реал Мадрид 2000"
-              width="640"
-              height="640"
-              loading="lazy"
-            >
+            <div class="card-slider">
+              <ul class="card-slider__track" tabindex="0" aria-label="Фото товара: листайте горизонтально">
+                <li class="card-slider__slide">
+                  <img
+                    class="product-card__image"
+                    src="images/real-2000/real-2000-640.jpg"
+                    srcset="images/real-2000/real-2000-480.jpg 480w,
+                            images/real-2000/real-2000-640.jpg 640w,
+                            images/real-2000/real-2000-960.jpg 960w"
+                    sizes="(max-width: 639px) 100vw,
+                           (max-width: 1023px) 50vw,
+                           33vw"
+                    alt="Футболка Реал Мадрид 2000, вид спереди"
+                    width="640"
+                    height="640"
+                    loading="lazy"
+                  >
+                </li>
+                <li class="card-slider__slide">
+                  <img
+                    class="product-card__image"
+                    src="images/real-2000/real-2000-back-640.jpg"
+                    srcset="images/real-2000/real-2000-back-480.jpg 480w,
+                            images/real-2000/real-2000-back-640.jpg 640w,
+                            images/real-2000/real-2000-back-960.jpg 960w"
+                    sizes="(max-width: 639px) 100vw,
+                           (max-width: 1023px) 50vw,
+                           33vw"
+                    alt="Футболка Реал Мадрид 2000, вид сзади"
+                    width="640"
+                    height="640"
+                    loading="lazy"
+                  >
+                </li>
+              </ul>
+              <div class="card-slider__dots"></div>
+            </div>
             <h3 class="product-card__title">Реал Мадрид 2000</h3>
-            <p class="product-card__description">Ретро-футболка «Реала» сезона 2000 года.</p>
-            <p class="product-card__price">2 000 руб.</p>
+            <p class="product-card__description">Домашняя форма Adidas со спонсором Teka — эпоха первых «галактикос».</p>
+            <p class="product-card__price">8 400 руб.</p>
             <div class="product-card__actions">
               <a class="button button--secondary" href="product.html">Подробнее</a>
               <button class="button button--primary product-card__button" type="button" data-product="Реал Мадрид 2000">
@@ -181,23 +251,46 @@
           </article>
 
           <article class="product-card">
-            <img
-              class="product-card__image"
-              src="images/barca-10/barca-10-640.jpg"
-              srcset="images/barca-10/barca-10-480.jpg 480w,
-                      images/barca-10/barca-10-640.jpg 640w,
-                      images/barca-10/barca-10-896.jpg 896w"
-              sizes="(max-width: 639px) 100vw,
-                    (max-width: 1023px) 50vw,
-                    33vw"
-              alt="Футболка «Барселоны» с номером 10"
-              width="640"
-              height="857"
-              loading="lazy"
-            >
-            <h3 class="product-card__title">Барселона, номер 10</h3>
-            <p class="product-card__description">Футболка «Барселоны» с номером 10 на спине.</p>
-            <p class="product-card__price">2 500 руб.</p>
+            <div class="card-slider">
+              <ul class="card-slider__track" tabindex="0" aria-label="Фото товара: листайте горизонтально">
+                <li class="card-slider__slide">
+                  <img
+                    class="product-card__image"
+                    src="images/barca-10/barca-10-640.jpg"
+                    srcset="images/barca-10/barca-10-480.jpg 480w,
+                            images/barca-10/barca-10-640.jpg 640w,
+                            images/barca-10/barca-10-896.jpg 896w"
+                    sizes="(max-width: 639px) 100vw,
+                           (max-width: 1023px) 50vw,
+                           33vw"
+                    alt="Футболка «Барселоны» с номером 10, вид спереди"
+                    width="640"
+                    height="857"
+                    loading="lazy"
+                  >
+                </li>
+                <li class="card-slider__slide">
+                  <img
+                    class="product-card__image"
+                    src="images/barca-10/barca-10-back-640.jpg"
+                    srcset="images/barca-10/barca-10-back-480.jpg 480w,
+                            images/barca-10/barca-10-back-640.jpg 640w,
+                            images/barca-10/barca-10-back-896.jpg 896w"
+                    sizes="(max-width: 639px) 100vw,
+                           (max-width: 1023px) 50vw,
+                           33vw"
+                    alt="Футболка «Барселоны» с номером 10, вид сзади"
+                    width="640"
+                    height="857"
+                    loading="lazy"
+                  >
+                </li>
+              </ul>
+              <div class="card-slider__dots"></div>
+            </div>
+            <h3 class="product-card__title">Барселона 2003</h3>
+            <p class="product-card__description">Футболка «Барселоны» с легендарной десяткой на спине.</p>
+            <p class="product-card__price">15 900 руб.</p>
             <div class="product-card__actions">
               <a class="button button--secondary" href="product.html">Подробнее</a>
               <button class="button button--primary product-card__button" type="button" data-product="Барселона, номер 10">
@@ -208,23 +301,46 @@
 
           <article class="product-card">
             <span class="product-card__badge">Новинка</span>
-            <img
-              class="product-card__image"
-              src="images/milan/milan-2007-640.jpg"
-              srcset="images/milan/milan-2007-480.jpg 480w,
-                      images/milan/milan-2007-640.jpg 640w,
-                      images/milan/milan-2007-960.jpg 960w"
-              sizes="(max-width: 639px) 100vw,
-                    (max-width: 1023px) 50vw,
-                    33vw"
-              alt="Футболка «Милана» 2007 года"
-              width="640"
-              height="640"
-              loading="lazy"
-            >
+            <div class="card-slider">
+              <ul class="card-slider__track" tabindex="0" aria-label="Фото товара: листайте горизонтально">
+                <li class="card-slider__slide">
+                  <img
+                    class="product-card__image"
+                    src="images/milan/milan-2007-640.jpg"
+                    srcset="images/milan/milan-2007-480.jpg 480w,
+                            images/milan/milan-2007-640.jpg 640w,
+                            images/milan/milan-2007-960.jpg 960w"
+                    sizes="(max-width: 639px) 100vw,
+                           (max-width: 1023px) 50vw,
+                           33vw"
+                    alt="Футболка «Милана» 2007 года, вид спереди"
+                    width="640"
+                    height="640"
+                    loading="lazy"
+                  >
+                </li>
+                <li class="card-slider__slide">
+                  <img
+                    class="product-card__image"
+                    src="images/milan/milan-2007-back-640.jpg"
+                    srcset="images/milan/milan-2007-back-480.jpg 480w,
+                            images/milan/milan-2007-back-640.jpg 640w,
+                            images/milan/milan-2007-back-960.jpg 960w"
+                    sizes="(max-width: 639px) 100vw,
+                           (max-width: 1023px) 50vw,
+                           33vw"
+                    alt="Футболка «Милана» 2007 года, вид сзади"
+                    width="640"
+                    height="640"
+                    loading="lazy"
+                  >
+                </li>
+              </ul>
+              <div class="card-slider__dots"></div>
+            </div>
             <h3 class="product-card__title">Милан 2007</h3>
-            <p class="product-card__description">Ретро-футболка «Милана» сезона 2007 года.</p>
-            <p class="product-card__price">3 000 руб.</p>
+            <p class="product-card__description">Форма сезона, когда «Милан» взял Лигу чемпионов в Афинах.</p>
+            <p class="product-card__price">11 200 руб.</p>
             <div class="product-card__actions">
               <a class="button button--secondary" href="product.html">Подробнее</a>
               <button class="button button--primary product-card__button" type="button" data-product="Милан 2007">
@@ -234,26 +350,98 @@
           </article>
 
           <article class="product-card">
-            <img
-              class="product-card__image"
-              src="images/japan/japan-special-640.jpg"
-              srcset="images/japan/japan-special-480.jpg 480w,
-                      images/japan/japan-special-640.jpg 640w,
-                      images/japan/japan-special-960.jpg 960w"
-              sizes="(max-width: 639px) 100vw,
-                    (max-width: 1023px) 50vw,
-                    33vw"
-              alt="Футболка сборной Японии, специальная серия"
-              width="640"
-              height="640"
-              loading="lazy"
-            >
+            <div class="card-slider">
+              <ul class="card-slider__track" tabindex="0" aria-label="Фото товара: листайте горизонтально">
+                <li class="card-slider__slide">
+                  <img
+                    class="product-card__image"
+                    src="images/japan/japan-special-640.jpg"
+                    srcset="images/japan/japan-special-480.jpg 480w,
+                            images/japan/japan-special-640.jpg 640w,
+                            images/japan/japan-special-960.jpg 960w"
+                    sizes="(max-width: 639px) 100vw,
+                           (max-width: 1023px) 50vw,
+                           33vw"
+                    alt="Футболка сборной Японии, специальная серия, вид спереди"
+                    width="640"
+                    height="640"
+                    loading="lazy"
+                  >
+                </li>
+                <li class="card-slider__slide">
+                  <img
+                    class="product-card__image"
+                    src="images/japan/japan-special-back-640.jpg"
+                    srcset="images/japan/japan-special-back-480.jpg 480w,
+                            images/japan/japan-special-back-640.jpg 640w,
+                            images/japan/japan-special-back-960.jpg 960w"
+                    sizes="(max-width: 639px) 100vw,
+                           (max-width: 1023px) 50vw,
+                           33vw"
+                    alt="Футболка сборной Японии, специальная серия, вид сзади"
+                    width="640"
+                    height="640"
+                    loading="lazy"
+                  >
+                </li>
+              </ul>
+              <div class="card-slider__dots"></div>
+            </div>
             <h3 class="product-card__title">Япония, специальная серия</h3>
-            <p class="product-card__description">Футболка сборной Японии из специальной серии.</p>
-            <p class="product-card__price">3 500 руб.</p>
+            <p class="product-card__description">Лимитированная серия сборной Японии — редкая вещь для коллекции.</p>
+            <p class="product-card__price">6 500 руб.</p>
             <div class="product-card__actions">
               <a class="button button--secondary" href="product.html">Подробнее</a>
               <button class="button button--primary product-card__button" type="button" data-product="Япония, специальная серия">
+                Заказать
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="card-slider">
+              <ul class="card-slider__track" tabindex="0" aria-label="Фото товара: листайте горизонтально">
+                <li class="card-slider__slide">
+                  <img
+                    class="product-card__image"
+                    src="images/portugal/portugal-2004-640.jpg"
+                    srcset="images/portugal/portugal-2004-480.jpg 480w,
+                            images/portugal/portugal-2004-640.jpg 640w,
+                            images/portugal/portugal-2004-960.jpg 960w"
+                    sizes="(max-width: 639px) 100vw,
+                           (max-width: 1023px) 50vw,
+                           33vw"
+                    alt="Красная футболка сборной Португалии 2004 года с номером 17 на груди, вид спереди"
+                    width="640"
+                    height="640"
+                    loading="lazy"
+                  >
+                </li>
+                <li class="card-slider__slide">
+                  <img
+                    class="product-card__image"
+                    src="images/portugal/portugal-2004-back-640.jpg"
+                    srcset="images/portugal/portugal-2004-back-480.jpg 480w,
+                            images/portugal/portugal-2004-back-640.jpg 640w,
+                            images/portugal/portugal-2004-back-960.jpg 960w"
+                    sizes="(max-width: 639px) 100vw,
+                           (max-width: 1023px) 50vw,
+                           33vw"
+                    alt="Красная футболка сборной Португалии 2004 года с номером 17 на груди, вид сзади"
+                    width="640"
+                    height="640"
+                    loading="lazy"
+                  >
+                </li>
+              </ul>
+              <div class="card-slider__dots"></div>
+            </div>
+            <h3 class="product-card__title">Португалия 2004</h3>
+            <p class="product-card__description">Домашняя форма Nike с Евро-2004 в Португалии — номер 17, под которым играл молодой Роналду.</p>
+            <p class="product-card__price">13 800 руб.</p>
+            <div class="product-card__actions">
+              <a class="button button--secondary" href="product.html">Подробнее</a>
+              <button class="button button--primary product-card__button" type="button" data-product="Португалия 2004">
                 Заказать
               </button>
             </div>
@@ -265,7 +453,7 @@
 
   <footer class="site-footer" id="contacts">
     <div class="site-footer__inner">
-      <p class="site-footer__text">&copy; 2026 ShopProject. Учебный проект.</p>
+      <p class="site-footer__text">&copy; 2026 Kanan — ретро-формы. Учебный проект.</p>
       <nav class="site-footer__links" aria-label="Ссылки в подвале">
         <a href="index.html#advantages">Преимущества</a>
         <a href="index.html#popular">Популярные товары</a>

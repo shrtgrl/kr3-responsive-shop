@@ -3,17 +3,21 @@
    =============================== */
 
 :root {
-  /* Цвета */
-  --color-bg: #ffffff;
-  --color-text: #222222;
-  --color-muted: #666666;
-  --color-primary: #0057b8;
-  --color-primary-dark: #003f86;
-  --color-border: #dddddd;
-  --color-surface: #f7f7f7;
-  --color-surface-accent: #eef5ff;
-  --color-danger: #b00020;
-  --color-success: #168a2f;
+  /* Цвета: палитра Kanan */
+  --color-bg: #f6eeeb;              /* фон страницы */
+  --color-text: #2f2313;            /* основной текст, тёмный кофейный */
+  --color-muted: #5e4e47;           /* второстепенный текст */
+  --color-primary: #b5162a;         /* акцентный красный */
+  --color-primary-dark: #8e1020;    /* красный при наведении */
+  --color-border: #d9c2ba;
+  --color-surface: #efe3df;         /* фильтры, формы, строки таблицы */
+  --color-surface-accent: #e6d3cd;  /* hero */
+  --color-card: #e6d3cd;            /* карточки — цвет hero */
+  --color-accent: #8da9b0;          /* бейджи */
+  --color-dark: #2f2313;            /* шапка и подвал */
+  --color-on-dark: #e6d3cd;         /* текст на тёмном фоне */
+  --color-danger: #b5162a;
+  --color-success: #2e6b3a;
   --color-white: #ffffff;
 
   /* Отступы */
@@ -84,8 +88,7 @@ main {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-dark);
 }
 
 .site-header__inner {
@@ -98,10 +101,14 @@ main {
 }
 
 .site-header__logo {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--color-text);
-  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-header__logo img {
+  display: block;
+  height: 28px;
+  width: auto;
 }
 
 .site-nav__list {
@@ -116,7 +123,7 @@ main {
 .site-nav__link {
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
-  color: var(--color-primary);
+  color: var(--color-on-dark);
   text-decoration: none;
   border-radius: var(--radius-sm);
 }
@@ -127,7 +134,7 @@ main {
 }
 
 .site-nav__link:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-on-dark);
   outline-offset: -2px;
 }
 
@@ -216,7 +223,7 @@ main {
   padding: var(--space-lg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  background-color: var(--color-surface);
+  background-color: var(--color-card);
 }
 
 .advantages__title {
@@ -253,7 +260,7 @@ main {
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  background-color: var(--color-bg);
+  background-color: var(--color-card);
 }
 
 .product-card:hover {
@@ -272,12 +279,13 @@ main {
   padding: 2px var(--space-sm);
   font-size: 12px;
   font-weight: 700;
-  color: var(--color-white);
-  background-color: var(--color-primary);
+  color: var(--color-text);
+  background-color: var(--color-accent);
   border-radius: var(--radius-sm);
 }
 
 .product-card--discount .product-card__badge {
+  color: var(--color-white);
   background-color: var(--color-danger);
 }
 
@@ -578,10 +586,12 @@ main {
   padding: var(--space-lg);
   border: none;
   border-radius: var(--radius-lg);
+  color: var(--color-text);
+  background-color: var(--color-bg);
 }
 
 .order-dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(47, 35, 19, 0.6);
 }
 
 .order-dialog__title {
@@ -601,8 +611,16 @@ main {
 
 .site-footer {
   margin-top: var(--space-xl);
-  background-color: var(--color-surface);
-  border-top: 1px solid var(--color-border);
+  color: var(--color-on-dark);
+  background-color: var(--color-dark);
+}
+
+.site-footer a {
+  color: var(--color-on-dark);
+}
+
+.site-footer a:hover {
+  color: var(--color-white);
 }
 
 .site-footer__inner {
@@ -645,7 +663,158 @@ main {
   outline-offset: 3px;
 }
 
-/* На синем фоне активного пункта меню синяя рамка не видна — делаем её белой. */
-.site-nav__link--active:focus-visible {
-  outline-color: var(--color-white);
+/* На тёмных шапке и подвале красная рамка почти не видна (контраст 2.3) — делаем её светлой. */
+.site-header :focus-visible,
+.site-footer :focus-visible {
+  outline-color: var(--color-on-dark);
+}
+
+/* ===============================
+   15. Слайдер «Как это носят»
+   =============================== */
+
+/* Точки слайдеров (общие для лукбука и карточек): кнопка 24×24, видимый кружок — через ::before */
+.lookbook__dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-top: 12px;
+}
+
+.slider-dot {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.slider-dot::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--color-border);
+  transition: width 0.2s, background-color 0.2s;
+}
+
+.slider-dot:hover::before {
+  background-color: var(--color-muted);
+}
+
+.slider-dot[aria-current="true"]::before {
+  width: 22px;
+  background-color: var(--color-primary);
+}
+
+/* Лента слайдов: горизонтальная прокрутка + «примагничивание» к слайду */
+.lookbook__track {
+  display: flex;
+  gap: var(--space-md);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.lookbook__track::-webkit-scrollbar {
+  display: none;
+}
+
+.lookbook__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.lookbook__figure {
+  position: relative;
+  margin: 0;
+}
+
+.lookbook__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.lookbook__caption {
+  position: absolute;
+  left: var(--space-sm);
+  bottom: var(--space-sm);
+  max-width: calc(100% - 16px);
+  padding: 6px 12px;
+  font-size: 14px;
+  color: var(--color-on-dark);
+  background-color: var(--color-dark);
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lookbook__track {
+    scroll-behavior: auto;
+  }
+
+  .slider-dot::before {
+    transition: none;
+  }
+}
+
+/* ===============================
+   16. Слайдер фото в карточке товара
+   =============================== */
+
+/* Фото «во всю ширину» карточки: отрицательные отступы съедают padding карточки */
+.card-slider {
+  min-width: 0;
+  margin: calc(var(--space-md) * -1) calc(var(--space-md) * -1) 0;
+}
+
+.card-slider__track {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  /* скругляем только верх, по радиусу карточки (минус 1px рамки) */
+  border-radius: calc(var(--radius-md) - 1px) calc(var(--radius-md) - 1px) 0 0;
+}
+
+.card-slider .product-card__image {
+  border-radius: 0;
+}
+
+.card-slider__track::-webkit-scrollbar {
+  display: none;
+}
+
+.card-slider__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.card-slider__dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-xs);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-slider__track {
+    scroll-behavior: auto;
+  }
 }
