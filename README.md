@@ -20,6 +20,7 @@
 - `css/responsive.css` — адаптивные стили (Mobile First);
 - `js/main.js` — бургер-меню и открытие/закрытие модального окна;
 - `images/` — изображения;
+- `lighthouse/` — отчёты Lighthouse (Accessibility);
 - `README.md` — описание проекта.
 
 ## Адаптивные решения
